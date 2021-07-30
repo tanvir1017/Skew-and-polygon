@@ -1,0 +1,109 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Skewed</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        body{
+            color: #fff;
+            font-size: 1.2rem;
+            text-align: center;
+            font-weight: bold;
+
+        }
+        section{
+            padding: 30vh 0;
+        }
+        .one{
+            position: relative;
+            background-color: #FFC145;
+        }
+        .one::before,
+        .one::after{
+            position: absolute;
+            content: "";
+            height: 150px;
+            width: 150px;
+            background-color: #FFC145;
+            bottom: -1;
+            z-index: 100;
+            
+        }
+        .one::before{
+            right: 50%;
+            transform: skew(0, 20deg);
+        }
+        .one::after{
+            left: 50%;
+            transform: skew(0, -20deg);
+        }
+        .one h1{
+            font-size: 3.5rem;
+            font-family: Arial, Helvetica, sans-serif;
+            font-weight: bold;
+        }
+        .one__icon{
+            height: 100px;
+            width: 100px;
+            font-size: 2em;
+            background-color: rgb(0,0,0,.3);
+            color: rgb(0,0,0,.6);
+            border-radius: 50%;
+            margin: 0 auto;
+            display: grid;
+            place-items: center;
+            font-family: Arial, Helvetica, sans-serif;
+            cursor: pointer;
+            transform: rotate(90deg);
+            box-shadow: 3px -2px 18px 2px rgb(51 51 51 / 30%);
+        }
+        .two{
+            position: relative;
+            background-color: #FF6B6C;
+            z-index: 10;
+            clip-path: polygon(0 0,100% 0, 100% calc(100% - 10vw), 0 100%);
+            margin-bottom: -10vw;
+        }
+        .two h1{
+            font-size: 3.5rem;
+            font-family: Arial, Helvetica, sans-serif;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+        .mar-1{
+            clip-path: polygon(49% 0%, 100% 0%, 100% calc(100% - 0vh), -40% 100%);
+        }
+        .mar-2{
+            clip-path: polygon(0% 0%, 100% 0%, 104% calc(100% - 41vh), 0% 162%);
+        }
+        .three{
+            background: #5B5F97;
+        }
+        .three h1{
+            font-size: 3.5rem;
+            font-family: Arial, Helvetica, sans-serif;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <section class="one">
+        <h1>Section one</h1>
+        <div class="one__icon">:-)</div>
+    </section>
+    <section class="two">
+        <h1>Section two</h1>
+        <img class="mar-1" src="marwan.jpg" width="350px" height="auto" alt="">
+        <img class="mar-2" src="marwan.jpg" width="350px" height="auto" alt="">
+    </section>
+    <section class="three">
+        <h1>Section three</h1>
+        <div class="one__icon">|3</div>
+    </section>
+</body>
+</html>
